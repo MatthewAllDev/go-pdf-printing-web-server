@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template1</title>
+</head>
+<body>
+<div style="max-width: 600px; max-height: 595px; width: 600px; height: 595px;">
+    <div style="text-align: center; margin-top: 80px; margin-bottom: 2.5em">
+        <p style="font-size: 30pt; font-weight: 700; margin-top: 0.15em; margin-bottom: 0;">
+            {{ .TEXT}}
+        </p>
+    </div>
+    <div style="text-align: center">
+        <div>
+            <img src="data:image/png;base64,{{ .BARCODE_IMAGE_BASE64}}" width="550px" height="150px" alt="barcode">
+        </div>
+        <div style="font-size: 24pt;">
+            {{ .BARCODE_DATA}}
+        </div>
+    </div>
+</div>
+</body>
+</html>

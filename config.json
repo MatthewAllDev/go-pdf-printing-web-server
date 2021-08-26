@@ -1,0 +1,22 @@
+{
+  "debug_mode": true,
+  "print_out": false,
+  "port": "8080",
+  "printers":
+  {
+    "label":
+    {
+      "name": "Xprinter XP-365B",
+      "page_width": 80,
+      "page_height": 80,
+      "dpi": 300
+    },
+    "a4":
+    {
+      "name": "Xerox",
+      "page_width": 210,
+      "page_height": 297,
+      "dpi": 300
+    }
+  }
+}
