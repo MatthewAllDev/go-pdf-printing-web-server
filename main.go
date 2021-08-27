@@ -89,9 +89,11 @@ func generateAndPrintFile(r *http.Request, config Config) error {
 			_ = os.Remove(name)
 		}(pdfFilePath)
 	}
-	output, err := printPdfFile(pdfFilePath, printJob.printer, config.DebugMode)
-	if err != nil {
-		log.Print(output)
+	if config.PrintOut {
+		output, err := printPdfFile(pdfFilePath, printJob.printer, config.DebugMode)
+		if err != nil {
+			log.Print(output)
+		}
 	}
 	return err
 }
