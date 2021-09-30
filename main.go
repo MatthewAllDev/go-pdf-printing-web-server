@@ -124,7 +124,12 @@ func createPrintJob(r *http.Request, config Config) (PrintJob, error) {
 				err = errors.New(fmt.Sprintf("Unable to create file from file_data parameter in request: %s", err))
 				return printJob, err
 			}
-			_, err = file.Write([]byte(value[0]))
+			byteFileData, err := DecodeB64(value[0])
+			if err != nil {
+				err = errors.New(fmt.Sprintf("Unable to decode file from file_data parameter in request: %s", err))
+				return printJob, err
+			}
+			_, err = file.Write(byteFileData)
 			if err != nil {
 				err = errors.New(fmt.Sprintf("Unable to write file from file_data parameter in request: %s", err))
 				return printJob, err
@@ -271,6 +276,10 @@ func parametersMapToString(parameters map[string]string) string {
 		}
 	}
 	return parametersString
+}
+
+func DecodeB64(b64Data string) (byteData []byte, err error) {
+    return base64.StdEncoding.DecodeString(b64Data)
 }
 
 type Config struct {

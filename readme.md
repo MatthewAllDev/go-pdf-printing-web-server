@@ -9,7 +9,7 @@ Dependencies
 
 Request:
 -------------------------
-+ ***file_data*** - *string* - binary data of the file
++ ***file_data*** - *string* - binary data of the file in base64
 + ***template*** - *string* - template file name in directory "templates"
 + ***printer*** - *string* - the key of the printer configured in the configuration file
 + ***template parameters*** - *string* - keys must match the parameters in the template file
